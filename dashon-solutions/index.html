@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashon Solutions | Coming Soon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Google Font: Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ✅ Tailwind config override to use Outfit -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center px-4 font-sans">
+
+  <div class="text-center max-w-xl w-full space-y-8">
+    <!-- Brand -->
+    <h1 class="text-4xl font-extrabold text-blue-700 tracking-tight">
+      Dashon Solutions
+    </h1>
+    <p class="text-base text-slate-400 font-medium">
+      Empowering Technology | Engineering Innovation
+    </p>
+
+    <!-- Card -->
+    <div class="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-2xl shadow-xl space-y-5">
+      <h2 class="text-2xl font-bold text-blue-400">We're Launching Soon</h2>
+      <p class="text-slate-300 text-base leading-relaxed">
+        Our new digital experience is on the way. We’re building something powerful and innovative to better serve your IT and business needs.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-xs text-slate-500 pt-8">
+      © 2025 Dashon Solutions. All rights reserved.
+    </footer>
+  </div>
+
+</body>
+</html>
