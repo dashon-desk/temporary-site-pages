@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JKEnterprises - Coming Soon</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #dfe9f3, #ffffff);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        color: #1c1c1c;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 40px 30px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 500px;
+        width: 90%;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card h1 {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      .card p {
+        font-size: 1rem;
+        margin-bottom: 18px;
+        color: #444;
+        line-height: 1.6;
+      }
+
+      .highlight {
+        font-weight: 600;
+        color: #0077b6;
+      }
+
+      .footer {
+        margin-top: 25px;
+        font-size: 0.85rem;
+        color: #777;
+      }
+
+      /* Optional: Floating animation effect */
+      .card:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>We're Crafting Something Amazing</h1>
+      <p>
+        The official website of <span class="highlight">JKEnterprises</span> is
+        currently under development.
+      </p>
+      <p>
+        Our digital journey is actively being built by
+        <span class="highlight">Dashon Solutions</span>.
+      </p>
+      <p>Stay tuned — we'll be live very soon!</p>
+      <div class="footer">&copy; 2025 JKEnterprises. All rights reserved.</div>
+    </div>
+  </body>
+</html>
