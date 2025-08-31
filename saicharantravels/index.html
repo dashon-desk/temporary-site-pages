@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saicharan Travels - Coming Soon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb, #9333ea, #ec4899);
+      background-size: 300% 300%;
+      animation: gradientShift 12s ease infinite;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 750px;
+      padding: 20px;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      animation: slideDown 1.5s ease;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+      opacity: 0.9;
+      animation: fadeUp 2s ease;
+    }
+
+    .crafting {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #fbbf24;
+      margin-bottom: 30px;
+      animation: pulse 2s infinite;
+    }
+
+    /* Road */
+    .road {
+      position: relative;
+      width: 100%;
+      height: 80px;
+      background: #111827;
+      border-top: 6px solid #374151;
+      margin: 40px 0;
+      overflow: hidden;
+    }
+
+    .lane {
+      position: absolute;
+      top: 35px;
+      width: 100%;
+      height: 8px;
+      background: repeating-linear-gradient(to right,
+          #f3f4f6 0 40px,
+          transparent 40px 80px);
+      animation: roadMove 4s linear infinite;
+    }
+
+    /* Bus */
+    .bus {
+      position: absolute;
+      bottom: 10px;
+      left: -200px;
+      width: 160px;
+      height: 70px;
+      background: #f59e0b;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      animation: busMove 8s linear infinite;
+    }
+
+    .bus:before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      width: 120px;
+      height: 20px;
+      background: #fbbf24;
+      border-radius: 6px;
+    }
+
+    .window {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 40px;
+      height: 25px;
+      background: #e0f2fe;
+      border-radius: 3px;
+      box-shadow: 50px 0 #e0f2fe, 100px 0 #e0f2fe;
+    }
+
+    .wheel {
+      position: absolute;
+      bottom: -15px;
+      width: 28px;
+      height: 28px;
+      background: #1f2937;
+      border: 4px solid #f3f4f6;
+      border-radius: 50%;
+      animation: wheelSpin 2s linear infinite;
+    }
+
+    .wheel.left {
+      left: 25px;
+    }
+
+    .wheel.right {
+      right: 25px;
+    }
+
+    /* Contact Info */
+    .contact {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      animation: fadeUp 2.5s ease;
+    }
+
+    .contact strong {
+      font-weight: 700;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-top: 30px;
+    }
+
+    /* Clouds */
+    .cloud {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: cloudMove 60s linear infinite;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .cloud.small {
+      width: 60px;
+      height: 30px;
+      top: 60px;
+      left: -100px;
+    }
+
+    .cloud.small::before {
+      width: 30px;
+      height: 30px;
+      top: -10px;
+      left: 10px;
+    }
+
+    .cloud.small::after {
+      width: 40px;
+      height: 40px;
+      top: -15px;
+      left: 25px;
+    }
+
+    .cloud.large {
+      width: 120px;
+      height: 60px;
+      top: 120px;
+      left: -200px;
+    }
+
+    .cloud.large::before {
+      width: 60px;
+      height: 60px;
+      top: -20px;
+      left: 20px;
+    }
+
+    .cloud.large::after {
+      width: 70px;
+      height: 70px;
+      top: -25px;
+      left: 60px;
+    }
+
+    /* Birds */
+    .bird {
+      position: absolute;
+      top: 200px;
+      left: -50px;
+      font-size: 1.5rem;
+      animation: birdFly 20s linear infinite;
+    }
+
+    /* Animations */
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.6;
+      }
+    }
+
+    @keyframes roadMove {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: -160px 0;
+      }
+    }
+
+    @keyframes busMove {
+      0% {
+        left: -200px;
+      }
+
+      50% {
+        left: 100%;
+      }
+
+      100% {
+        left: -200px;
+      }
+    }
+
+    @keyframes wheelSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes cloudMove {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(1400px);
+      }
+    }
+
+    @keyframes birdFly {
+      0% {
+        left: -50px;
+        top: 180px;
+      }
+
+      50% {
+        left: 50%;
+        top: 120px;
+      }
+
+      100% {
+        left: 110%;
+        top: 160px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Clouds -->
+  <div class="cloud small"></div>
+  <div class="cloud large"></div>
+
+  <!-- Bird -->
+  <div class="bird">🐦</div>
+
+  <div class="container">
+    <h1>Saicharan Travels</h1>
+    <p class="tagline">🚍 "Your Trusted Partner in Every Journey" 🌍</p>
+    <p class="crafting">✨ We’re crafting something big for your travels ✨</p>
+
+    <!-- Road & Bus Animation -->
+    <div class="road">
+      <div class="lane"></div>
+      <div class="bus">
+        <div class="window"></div>
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <p class="contact">
+      📞 For Bookings Call: <strong>+91 88303 55034</strong> <br />
+      📧 Email: <strong>saicharantravels.help@gmail.com</strong>
+    </p>
+
+    <footer>
+      Developed with ❤️ by <strong>Dashon Solutions</strong>
+    </footer>
+  </div>
+</body>
+
+</html>
